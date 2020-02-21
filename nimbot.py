@@ -1,5 +1,6 @@
 import os
 import random
+import discord 
 
 from discord.ext import commands
 from dotenv import load_dotenv
@@ -21,10 +22,10 @@ async def average(ctx, a, b):
     await ctx.send((a+b)/2)
 
 
-@bot.event
+@bot.listen()
 async def on_message(message):
     if message.content == 'hate':
-        await channel.send('woah there, hate is a strong word')
+        await message.channel.send('woah there, hate is a strong word')
 
 bot.run(token)
 
