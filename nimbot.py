@@ -20,6 +20,12 @@ async def flip_coin(ctx):
 async def average(ctx, a, b):
     await ctx.send((a+b)/2)
 
+client = discord.Client()
+
+@client.event
+async def on_message(message):
+    if message.content == 'hate':
+        await channel.send('woah there, hate is a strong word')
 
 bot.run(token)
 
